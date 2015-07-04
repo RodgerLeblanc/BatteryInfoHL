@@ -2,6 +2,11 @@ BatteryInfoHL (beginner)
 --------------
 BB10 sample app that shows how to listen to BatteryInfo signals from an headless app. Written to help another dev.
 
+Don't forget to add this to your headless pro file
+```sh
+LIBS += -lbbdevice
+```
+
 
 LICENSE
 --------------
