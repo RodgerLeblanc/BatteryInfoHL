@@ -2,6 +2,7 @@ import bb.cascades 1.2
 
 Container {
     property alias optionName: label.text
+    property string settingsName
     
     layout: StackLayout { orientation: LayoutOrientation.LeftToRight }
     horizontalAlignment: HorizontalAlignment.Right
@@ -14,8 +15,8 @@ Container {
         verticalAlignment: VerticalAlignment.Center
     }
     ToggleButton {
-        checked: app.value(label.text.trim(), true)
-        onCheckedChanged: { app.setValue(label.text.trim(), checked) }
+        checked: app.value(settingsName, true)
+        onCheckedChanged: { app.setValue(settingsName, checked) }
         verticalAlignment: VerticalAlignment.Center
     }
 }

@@ -27,14 +27,14 @@ Page {
                 horizontalAlignment: HorizontalAlignment.Center
                 verticalAlignment: VerticalAlignment.Center
                 
-                CustomOption { optionName: "Notify On Condition Changed" }
-                CustomOption { optionName: "Notify On Cycle Count Changed" }
-                CustomOption { optionName: "Notify On Full Charge Capacity Changed" }
-                CustomOption { optionName: "Notify On Level Changed" }
-                CustomOption { optionName: "Notify On Charging State Changed" }
-                CustomOption { optionName: "Notify On Present Changed" }
-                CustomOption { optionName: "Notify On Rxid Changed" }
-                CustomOption { optionName: "Notify On Temperature Changed" }
+                CustomOption { optionName: "Notify On Condition Changed"; settingsName: "NotifyOnConditionChanged" }
+                CustomOption { optionName: "Notify On Cycle Count Changed"; settingsName: "NotifyOnCycleCountChanged" }
+                CustomOption { optionName: "Notify On Full Charge Capacity Changed"; settingsName: "NotifyOnFullChargeCapacityChanged" }
+                CustomOption { optionName: "Notify On Level Changed"; settingsName: "NotifyOnLevelChanged" }
+                CustomOption { optionName: "Notify On Charging State Changed"; settingsName: "NotifyOnChargingStateChanged" }
+                CustomOption { optionName: "Notify On Present Changed"; settingsName: "NotifyOnPresentChanged" }
+                CustomOption { optionName: "Notify On Rxid Changed"; settingsName: "NotifyOnRxidChanged" }
+                CustomOption { optionName: "Notify On Temperature Changed"; settingsName: "NotifyOnTemperatureChanged" }
             }
         }
     }
