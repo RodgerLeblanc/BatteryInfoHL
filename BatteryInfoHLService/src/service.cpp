@@ -30,7 +30,6 @@ using namespace bb::system;
 
 Service::Service() :
         QObject(),
-        m_notify(new Notification(this)),
         m_invokeManager(new InvokeManager(this)),
         m_batteryInfo(new BatteryInfo(this))
 {
@@ -40,13 +39,6 @@ Service::Service() :
     NotificationDefaultApplicationSettings notificationSettings;
     notificationSettings.setPreview(NotificationPriorityPolicy::Allow);
     notificationSettings.apply();
-
-    m_notify->setTitle("BatteryInfoHL Service");
-
-    bb::system::InvokeRequest request;
-    request.setTarget("com.CellNinja.BatteryInfoHL");
-    request.setAction("bb.action.START");
-    m_notify->setInvokeRequest(request);
 
     // Set the initial values
     m_lastBatteryInfo.chargingState = m_batteryInfo->chargingState();
@@ -75,8 +67,18 @@ void Service::handleInvoke(const bb::system::InvokeRequest & request)
 }
 
 void Service::notifyHub(const QString& body) {
-    m_notify->setBody(body);
-    m_notify->notify();
+    bb::platform::Notification::clearEffectsForAll();
+
+    Notification notify;
+
+    bb::system::InvokeRequest request;
+    request.setTarget("com.CellNinja.BatteryInfoHL");
+    request.setAction("bb.action.START");
+    notify.setInvokeRequest(request);
+
+    notify.setTitle("BatteryInfoHL Service");
+    notify.setBody(body);
+    notify.notify();
 }
 
 void Service::onConditionChanged(BatteryCondition::Type condition) {

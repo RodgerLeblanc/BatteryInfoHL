@@ -65,7 +65,6 @@ private slots:
 private:
     void notifyHub(const QString& body);
 
-    bb::platform::Notification * m_notify;
     bb::system::InvokeManager * m_invokeManager;
 
     bb::device::BatteryInfo* m_batteryInfo;
